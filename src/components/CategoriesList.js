@@ -17,10 +17,10 @@ export const CategoriesList = ({ categoriesList = [] }) => {
   };
 
   return (
-    <div className="col-lg-10 col-md-8 col-12 d-flex flex-column pt-5 pt-md-0">
+    <div className="col-lg-10 col-md-8 col-12 d-flex flex-column pt-5 pt-md-0 px-0" id="list-section"> 
       {categoriesList && categoriesList.length > 0 ? (
         <div className="container">
-          <div className="row row-cols-2 row-cols-md-3 row-cols-xl-5 justify-content-around">
+          <div className="row row-cols-1 row-cols-md-3 row-cols-xl-5 justify-content-around">
             {categoriesList.map((category) => (
               <CategoryListItem
                 category={category}
@@ -36,7 +36,7 @@ export const CategoriesList = ({ categoriesList = [] }) => {
       )}
 
       {isLoadMoreVisible && categoriesList.length > 0 && (
-        <button className="btn btn-info mx-auto" onClick={handleLoadMore}>
+        <button className="btn btn-info mx-auto text-dark-100" onClick={handleLoadMore}>
           Load more
         </button>
       )}

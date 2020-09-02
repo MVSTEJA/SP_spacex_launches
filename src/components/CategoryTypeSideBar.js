@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getAllCategories } from "../actions/categories";
 import {
   setBrowserQueryParams,
@@ -54,58 +54,61 @@ function CategoryTypeSideBar() {
   }, []);
   return (
     <div className="side-bar col-12 col-md-4 col-lg-2 position-sticky side-bar-container">
-      <h5 className="pl-3 pt-3">Filters</h5>
-      <div className="lead text-center">Launch Year</div>
-      <hr className="m-0" />
-      <ul className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
+      <h4 className="pt-2">Filters</h4>
+      <h5 className="font-weight-light mb-0 text-center">Launch Year</h5>
+      <hr className="m-0 mx-3" />
+      <div className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
         {cartCategories &&
           cartCategories.map((cat) => (
             <button
               key={cat.name}
-              className={`btn btn-success btn-sm mx-auto mx-md-3 mt-3 w-33 side-bar-item ${
+              className={`btn btn-sm mx-auto mx-md-3 mt-3 w-33 side-bar-item ${
                 currentActiveCategory === cat.name && "active"
               }`}
               onClick={handleGroupByCategory}
+              href="#list-section"
             >
               {cat.name}
             </button>
           ))}
-      </ul>
-      <div className="lead text-center">Succesful Launch</div>
-      <hr className="m-0" />
-      <ul className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
+      </div>
+      <h5 className="font-weight-light mb-0 text-center">Succesful Launch</h5>
+      <hr className="m-0 mx-3" />
+      <div className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
         {successFulLaunchList &&
           successFulLaunchList.map((launch) => (
             <button
               key={launch.name}
-              className={`btn btn-success btn-sm mx-auto mx-md-3 mt-3 w-33 side-bar-item ${
+              className={`btn btn-sm mx-auto mx-md-3 mt-3 w-33 side-bar-item ${
                 currentActiveLaunch === launch.value && "active"
               }`}
               onClick={handleSuccessFulLaunch}
               value={launch.value}
+              href="#list-section"
             >
               {launch.name}
             </button>
           ))}
-      </ul>
+      </div>
 
-      <div className="lead text-center">Succesful Landing</div>
-      <hr className="m-0" />
-      <ul className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
+      <h5 className="font-weight-light mb-0 text-center">Succesful Landing</h5>
+      <hr className="m-0 mx-3" />
+      <div className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
         {successFulLandingList &&
           successFulLandingList.map((land) => (
             <button
               key={land.name}
-              className={`btn btn-success btn-sm mx-auto mx-md-3 mt-3 w-33 side-bar-item ${
+              className={`btn btn-sm mx-auto mx-md-3 mt-3 w-33 side-bar-item ${
                 currentActiveLanding === land.value && "active"
               }`}
               onClick={handleSuccessFulLanding}
               value={land.value}
+              href="#list-section"
             >
               {land.name}
             </button>
           ))}
-      </ul>
+      </div>
     </div>
   );
 }

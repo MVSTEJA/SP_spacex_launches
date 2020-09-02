@@ -1,35 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import { AppContainer } from 'react-hot-loader'
-import { Provider } from 'react-redux'
-import configureStore from './configureStore'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import Loadable from "react-loadable";
 
-const store = configureStore()
-const render = () => {
-  ReactDOM.render(
-    <React.StrictMode>
-      <AppContainer>
+import "./index.scss";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import configureStore from "./configureStore";
+
+const windowObj = typeof window !== "undefined" && window;
+const reduxStateFromServer =
+  windowObj.REDUX_STATE === "__SERVER_REDUX_STATE__"
+    ? null
+    : windowObj.REDUX_STATE;
+
+const store = configureStore(reduxStateFromServer || {});
+
+window.onload = () => {
+  Loadable.preloadReady().then(() => {
+    const renderMethod = !!module.hot ? ReactDOM.render : ReactDOM.hydrate
+    
+    renderMethod(
+      <React.StrictMode>
         <Provider store={store}>
           <App />
         </Provider>
-      </AppContainer>
-    </React.StrictMode>,
-    document.getElementById('root')
-  )
-}
-
-render()
-
-// Hot reloading
-if (module.hot) {
-  // Reload components
-  module.hot.accept('./App', () => {
-    render()
-  })
-}
+      </React.StrictMode>,
+      document.getElementById("root")
+    );
+  });
+};
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

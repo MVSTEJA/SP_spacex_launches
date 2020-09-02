@@ -8,14 +8,16 @@ export const debounce = (func, delay) => {
     } 
 } 
 
-const params = new URLSearchParams(window.location.search);
+const windowObj = typeof window !== "undefined" && window;
+
+const params = windowObj && new URLSearchParams(windowObj.location.search);
 
 export const setBrowserQueryParams = (paramsKey, paramsValue) => {
     params.set(paramsKey, paramsValue);
-    window.history.replaceState(
+    windowObj && windowObj.history.replaceState(
       {},
       "",
-      `${window.location.pathname}?${params}`
+      `${windowObj.location.pathname}?${params}`
     );  
 }
 

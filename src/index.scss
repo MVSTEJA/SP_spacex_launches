@@ -5,8 +5,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.text-dark-100,
+%text-dark-100 {
+  color: #000;
 }
 
 .post-card {
@@ -20,7 +29,7 @@ code {
 }
 
 .cart-item-counter {
-  border:0;
+  border: 0;
   width: 25px;
   height: 25px;
   position: absolute;
@@ -29,7 +38,6 @@ code {
   text-align: center;
   line-height: 1em;
   padding: 0.6em 0;
-
 }
 
 @media (min-width: 0px) {
@@ -56,7 +64,7 @@ dialog {
   .side-bar {
     height: 100%;
     top: 50px;
-  }  
+  }
 }
 
 .list-group-item-action {
@@ -75,7 +83,17 @@ dialog {
 }
 
 .side-bar-item {
+  @extend %text-dark-100;
   display: inline;
+  background-color: #8fe48f;
+  border-color: #8fe48f;
+
+  &.active,
+  &:hover,
+  &:active {
+    background-color: #2cbb4c;
+    border-color: #2cbb4c;
+  }
 }
 
 .side-bar-container {

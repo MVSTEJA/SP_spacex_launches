@@ -19,6 +19,11 @@ export const getAllCategories = () => async (dispatch) => {
     type: "All_CATEGORIES",
     categories,
   });
+
+  dispatch({
+    type: "TOGGLE_LOAD_MORE",
+    isLoadMoreVisible: categories.length === 10,
+  });
 };
 
 export const loadMoreCategories = (offsetBy) => async (dispatch) => {
