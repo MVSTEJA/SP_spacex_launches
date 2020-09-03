@@ -8,7 +8,7 @@ This is a SPA built to see all spaceX launches, able to be filtered by `year, su
 
 ## Available Scripts
 
-Install dependencies, build the app and run the express server:
+In order to install dependencies, build the app and run the express server:
 
 In the project directory, you can run:
 
