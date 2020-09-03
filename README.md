@@ -30,7 +30,7 @@ To run the SSR server:
 
   firebase serve --only functions,hosting
  
- To deploy the production build to cloud(firebase):- 
+ To deploy the production build to cloud(firebase):
  
   firebase deploy
 ```
