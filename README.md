@@ -15,19 +15,19 @@ In the project directory, you can run:
 ```
  To run the client server:
  
- yarn install
- yarn start
+  yarn install
+  yarn start
 
  To run client tests:
 
- yarn test
+  yarn test
 
  To run the SSR server: 
 
- yarn build:server
- firebase serve --only functions,hosting
+  yarn build:server
+  firebase serve --only functions,hosting
  
  To deploy the production build to cloud(firebase):- 
  
- firebase deploy
+  firebase deploy
 ```
