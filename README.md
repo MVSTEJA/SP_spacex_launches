@@ -8,7 +8,13 @@ This is a SPA built to see all spaceX launches, able to be filtered by `year, su
 
 ## Lighthouse scores
 
+Mobile score :
+
 ![mobile score](/lighthouse-images/mobile-score.png)
+
+Desktop score :
+
+![desktop score](/lighthouse-images/desktop-score.png)
 
 ## Available Scripts
 
