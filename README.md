@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The Stack used here are :- react, redux, redux-thunk, axios, react-loadable, jest, enzyme, express, firebase.
+
 ### What's this ?
 
 This is a SPA built to see all spaceX launches, able to be filtered by `year, successful launch and succesful landing`.
