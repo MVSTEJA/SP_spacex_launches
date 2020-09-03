@@ -18,7 +18,7 @@ Desktop score :
 
 ![desktop score](/lighthouse-images/desktop-score.png)
 
-## Available Scripts
+## How can I see it in action?
 
 In order to install dependencies, build the app and run the express server:
 
