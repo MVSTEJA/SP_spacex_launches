@@ -4,21 +4,6 @@ const INITIAL_STATE = {
   isLoadMoreVisible: true
 };
 
-/**
- * 
- * @param {*} state 
- * @param {*} action 
- * @description 
- * 
- * Primary requirements handled are,
- * 1. User should be able to view all items under a category. 
- * 
- * Below 2 secondary requirements as well handled here.
- * 1. User should be able to filter items by categories, price range e.g (less than $5, $5 - $10,
-    $10 - $15, $15 - $20, over $20). 
- * 2. User should be able to sort items by price range e.g High to Low, Low to High
- *  
- */
 const categories = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "All_CATEGORIES": {

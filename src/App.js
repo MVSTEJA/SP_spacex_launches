@@ -24,14 +24,19 @@ const App = () => {
     <React.Fragment>
       <div className="jumbotron pt-2 px-4">
         <nav>
-          <h1>SpaceX Launch Programs </h1>
+          <h1>SpaceX Launch Programs</h1>
         </nav>
         <main className="row">
           <AsyncCategoryTypeSideBar />
           <AsyncCategoriesList />
         </main>
         <footer className="d-flex justify-content-center mt-5">
-          <h5>Developed by<span className="font-weight-light align-self-baseline">: MVS Teja</span></h5>
+          <h5>
+            Developed by
+            <span className="font-weight-light align-self-baseline">
+              : MVS Teja
+            </span>
+          </h5>
         </footer>
       </div>
     </React.Fragment>

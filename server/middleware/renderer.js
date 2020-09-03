@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import manifest from "../../build/asset-manifest.json";
 
 // import our main App component
-import App from "../../src/App";
+import App from "./../src/App";
 
 // function to map chunk names to assets
 const extractAssets = (assets, chunks) =>

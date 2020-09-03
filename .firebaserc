@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "sapient-xt-spacex",
+    "ssr": "sapient-xt-spacex"
+  }
+}

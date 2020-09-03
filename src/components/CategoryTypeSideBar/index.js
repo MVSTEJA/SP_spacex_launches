@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getAllCategories } from "../actions/categories";
+import { getAllCategories } from "../../actions/categories";
 import {
   setBrowserQueryParams,
   getLaunchYear,
   getSuccessFulLaunch,
   getSuccessFulLanding,
-} from "../utils";
+} from "../../utils";
 import {
-  cartCategories,
+  yearCategories,
   successFulLandingList,
   successFulLaunchList,
-} from "../constants";
+} from "../../constants";
 
 function CategoryTypeSideBar() {
-  // let { cartCategories } = useSelector((state) => state.cartHash);
   let dispatch = useDispatch();
 
   let [currentActiveCategory, setCurrentActiveCategory] = useState(null);
@@ -53,13 +52,13 @@ function CategoryTypeSideBar() {
     setCurrentActiveLanding(getSuccessFulLanding());
   }, []);
   return (
-    <div className="side-bar col-12 col-md-4 col-lg-2 position-sticky side-bar-container">
+    <div className="side-bar col-12 col-md-3 col-lg-2 position-sticky side-bar-container">
       <h4 className="pt-2">Filters</h4>
       <h5 className="font-weight-light mb-0 text-center">Launch Year</h5>
       <hr className="m-0 mx-3" />
       <div className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
-        {cartCategories &&
-          cartCategories.map((cat) => (
+        {yearCategories &&
+          yearCategories.map((cat) => (
             <button
               key={cat.name}
               className={`btn btn-sm mx-auto mx-md-3 mt-3 w-33 side-bar-item ${

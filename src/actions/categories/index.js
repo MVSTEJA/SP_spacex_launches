@@ -1,9 +1,9 @@
-import * as categoriesApi from "../api/categories";
+import * as categoriesApi from "../../api/categories";
 import {
   getLaunchYear,
   getSuccessFulLanding,
   getSuccessFulLaunch,
-} from "../utils";
+} from "../../utils";
 
 export const getAllCategories = () => async (dispatch) => {
   let filterBy = {

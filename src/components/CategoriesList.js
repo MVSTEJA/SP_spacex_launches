@@ -15,16 +15,18 @@ export const CategoriesList = ({ categoriesList = [] }) => {
   const handleLoadMore = () => {
     dispatch(loadMoreCategories(DEFAULT_OFFSET));
   };
-
   return (
-    <div className="col-lg-10 col-md-8 col-12 d-flex flex-column pt-5 pt-md-0 px-0" id="list-section"> 
+    <div
+      className="col-lg-10 col-md-9 col-12 d-flex flex-column pt-5 pt-md-0 px-0"
+      id="list-section"
+    >
       {categoriesList && categoriesList.length > 0 ? (
-        <div className="container">
-          <div className="row row-cols-1 row-cols-md-3 row-cols-xl-5 justify-content-around">
+        <div className="container mx-md-2 mx-xxl-auto">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-1">
             {categoriesList.map((category) => (
               <CategoryListItem
                 category={category}
-                key={category.flight_number}
+                key={category.mission_name}
               />
             ))}
           </div>
@@ -36,7 +38,10 @@ export const CategoriesList = ({ categoriesList = [] }) => {
       )}
 
       {isLoadMoreVisible && categoriesList.length > 0 && (
-        <button className="btn btn-info mx-auto text-dark-100" onClick={handleLoadMore}>
+        <button
+          className="btn btn-info mx-auto text-dark-100"
+          onClick={handleLoadMore}
+        >
           Load more
         </button>
       )}

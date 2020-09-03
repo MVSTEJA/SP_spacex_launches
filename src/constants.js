@@ -1,6 +1,6 @@
 export const DEFAULT_OFFSET = 10;
 
-export const cartCategories = [
+export const yearCategories = [
   {
     name: "2006",
   },
