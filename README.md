@@ -22,9 +22,12 @@ In the project directory, you can run:
 
   yarn test
 
- To run the SSR server: 
+To generate SSR build:
 
   yarn build:server
+
+To run the SSR server: 
+
   firebase serve --only functions,hosting
  
  To deploy the production build to cloud(firebase):- 
