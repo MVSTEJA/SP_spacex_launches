@@ -8,7 +8,7 @@ This is a SPA built to see all spaceX launches, able to be filtered by `year, su
 
 ## Lighthouse scores
 
-
+![mobile score](/lighthouse-images/Screenshot 2020-09-03 at 9.36.27 PM.png)
 
 ## Available Scripts
 
