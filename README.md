@@ -4,8 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### What's this ?
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is a SPA built to see all spaceX launches, able to be filtered by `year, successful launch and succesful landing`.
 
 ## Available Scripts
 
@@ -14,10 +13,14 @@ Install dependencies, build the app and run the express server:
 In the project directory, you can run:
 
 ```
+ To run the client server:
+ yarn install
  yarn start
  yarn test
- yarn build:server
 
+ To run the SSR server: 
+
+ yarn build:server
  firebase serve --only functions,hosting
  firebase deploy
 ```
