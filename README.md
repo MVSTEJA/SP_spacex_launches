@@ -9,9 +9,12 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Available Scripts
 
+Install dependencies, build the app and run the express server:
+
 In the project directory, you can run:
 
-```yarn start
+```
+ yarn start
  yarn test
  yarn build:server
 
