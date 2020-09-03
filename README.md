@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This is a SPA built to see all spaceX launches, able to be filtered by `year, successful launch and succesful landing`.
 
+## Lighthouse scores
+
+
+
 ## Available Scripts
 
 In order to install dependencies, build the app and run the express server:
