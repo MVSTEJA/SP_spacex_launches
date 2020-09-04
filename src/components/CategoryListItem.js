@@ -11,7 +11,7 @@ export const CategoryListItem = ({ category = {} }) => {
 
   let { land_success = "" } = cores[0];
   return (
-    <div className="card mb-5 w-md-48 mr-2">
+    <div className="card mb-2 w-md-48 mr-2">
       <div className="card-header mt-3 nb-b mx-3">
         <LazyLoadImage
           wrapperClassName="mx-auto h-100 placeholder-image"
