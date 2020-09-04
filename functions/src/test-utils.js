@@ -46,4 +46,4 @@ function shallow(ui, {
   return (0, _enzyme.shallow)( /*#__PURE__*/_react.default.createElement(_reactRedux.Provider, {
     store: mockStore
   }, ui));
-} // override render method
+}

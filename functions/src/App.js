@@ -38,10 +38,8 @@ const AsyncCategoriesList = (0, _reactLoadable.default)({
 
 const App = () => {
   const {
-    response,
     message
   } = (0, _reactRedux.useSelector)(state => state.categoriesList.categoriesError) || {};
-  console.log(response, message);
   let dispatch = (0, _reactRedux.useDispatch)();
   (0, _react.useEffect)(() => {
     if (message) {

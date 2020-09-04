@@ -58,7 +58,7 @@ function CategoryTypeSideBar() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "side-bar position-sticky side-bar-sm side-bar-md side-bar-lg side-bar-container"
   }, /*#__PURE__*/_react.default.createElement("h4", {
-    className: "px-3"
+    className: "px-3 pt-2"
   }, "Filters"), /*#__PURE__*/_react.default.createElement("h5", {
     className: "font-weight-light mb-0 text-center"
   }, "Launch Year"), /*#__PURE__*/_react.default.createElement("hr", {
