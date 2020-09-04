@@ -17,16 +17,27 @@ const getAllCategories = () => async dispatch => {
     successFullLaunch: (0, _utils.getSuccessFulLaunch)(),
     successFullLanding: (0, _utils.getSuccessFulLanding)()
   };
-  let categories = await categoriesApi.getAllCategories({ ...filterBy
+  let {
+    categories,
+    error
+  } = await categoriesApi.getAllCategories({ ...filterBy
   });
-  dispatch({
-    type: "All_CATEGORIES",
-    categories
-  });
-  dispatch({
-    type: "TOGGLE_LOAD_MORE",
-    isLoadMoreVisible: categories.length === 10
-  });
+
+  if (categories) {
+    dispatch({
+      type: "All_CATEGORIES",
+      categories
+    });
+    dispatch({
+      type: "TOGGLE_LOAD_MORE",
+      isLoadMoreVisible: categories.length === 10
+    });
+  } else {
+    dispatch({
+      type: "ERROR_GET_CATEGORIES",
+      error
+    });
+  }
 };
 
 exports.getAllCategories = getAllCategories;
@@ -37,21 +48,32 @@ const loadMoreCategories = offsetBy => async dispatch => {
     successFullLaunch: (0, _utils.getSuccessFulLaunch)(),
     successFullLanding: (0, _utils.getSuccessFulLanding)()
   };
-  let categories = await categoriesApi.getAllCategories({ ...filterBy,
+  let {
+    categories,
+    error
+  } = await categoriesApi.getAllCategories({ ...filterBy,
     offsetBy
   });
-  dispatch({
-    type: "INCREMENT_CATEGORY_OFFSET",
-    offsetBy
-  });
-  dispatch({
-    type: "LOAD_MORE_CATEGORIES",
-    categories
-  });
-  dispatch({
-    type: "TOGGLE_LOAD_MORE",
-    isLoadMoreVisible: categories.length === 10
-  });
+
+  if (categories) {
+    dispatch({
+      type: "INCREMENT_CATEGORY_OFFSET",
+      offsetBy
+    });
+    dispatch({
+      type: "LOAD_MORE_CATEGORIES",
+      categories
+    });
+    dispatch({
+      type: "TOGGLE_LOAD_MORE",
+      isLoadMoreVisible: categories.length === 10
+    });
+  } else {
+    dispatch({
+      type: "ERROR_GET_CATEGORIES",
+      error
+    });
+  }
 };
 
 exports.loadMoreCategories = loadMoreCategories;

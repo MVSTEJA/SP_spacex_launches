@@ -40,6 +40,13 @@ const categories = (state = INITIAL_STATE, action) => {
         };
       }
 
+    case 'ERROR_GET_CATEGORIES':
+      {
+        return { ...state,
+          categoriesError: action.error
+        };
+      }
+
     default:
       return state;
   }

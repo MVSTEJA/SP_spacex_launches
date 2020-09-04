@@ -30,8 +30,16 @@ const getAllCategories = async ({
     requestURL = `${requestURL}&launch_success=${successFullLaunch}`;
   }
 
-  let response = await _axios.default.get(requestURL);
-  return response.data;
+  try {
+    let response = await _axios.default.get(requestURL);
+    return {
+      categories: response.data
+    };
+  } catch (error) {
+    return {
+      error
+    };
+  }
 };
 
 exports.getAllCategories = getAllCategories;

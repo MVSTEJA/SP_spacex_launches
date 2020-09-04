@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireWildcard3 = require("@babel/runtime/helpers/interopRequireWildcard");
+
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
@@ -9,9 +11,15 @@ exports.default = void 0;
 
 var _interopRequireWildcard2 = _interopRequireDefault(require("@babel/runtime/helpers/interopRequireWildcard"));
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard3(require("react"));
+
+var _reactRedux = require("react-redux");
 
 var _reactLoadable = _interopRequireDefault(require("react-loadable"));
+
+var _reactToastify = require("react-toastify");
+
+require("react-toastify/dist/ReactToastify.css");
 
 const AsyncCategoryTypeSideBar = (0, _reactLoadable.default)({
   loader: () => Promise.resolve().then(() => (0, _interopRequireWildcard2.default)(require("./components/CategoryTypeSideBar"))),
@@ -29,6 +37,17 @@ const AsyncCategoriesList = (0, _reactLoadable.default)({
 });
 
 const App = () => {
+  const {
+    response,
+    message
+  } = (0, _reactRedux.useSelector)(state => state.categoriesList.categoriesError) || {};
+  console.log(response, message); // let {response, message} = categoriesError
+
+  (0, _react.useEffect)(() => {
+    if (message) {
+      _reactToastify.toast.error(message);
+    }
+  }, [message]);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "jumbotron"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -41,7 +60,7 @@ const App = () => {
     className: "d-flex justify-content-center mt-5"
   }, /*#__PURE__*/_react.default.createElement("h5", null, "Developed by", /*#__PURE__*/_react.default.createElement("span", {
     className: "font-weight-light align-self-baseline"
-  }, ": MVS Teja")))));
+  }, ": MVS Teja"))), /*#__PURE__*/_react.default.createElement(_reactToastify.ToastContainer, null)));
 };
 
 var _default = App;
