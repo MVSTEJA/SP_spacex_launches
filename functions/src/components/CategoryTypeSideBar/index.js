@@ -27,8 +27,9 @@ function CategoryTypeSideBar() {
     let {
       textContent
     } = evt.target;
-    setCurrentActiveCategory(textContent);
-    (0, _utils.setBrowserQueryParams)("launchYear", textContent);
+    let valueToSet = currentActiveCategory === textContent ? "" : textContent;
+    setCurrentActiveCategory(valueToSet);
+    (0, _utils.setBrowserQueryParams)("launchYear", valueToSet);
     dispatch((0, _categories.getAllCategories)());
   };
 
@@ -36,8 +37,9 @@ function CategoryTypeSideBar() {
     let {
       value
     } = evt.target;
-    setCurrentActiveLaunch(value);
-    (0, _utils.setBrowserQueryParams)("successFulLaunch", value);
+    let valueToSet = currentActiveLaunch === value ? "" : value;
+    setCurrentActiveLaunch(valueToSet);
+    (0, _utils.setBrowserQueryParams)("successFulLaunch", valueToSet);
     dispatch((0, _categories.getAllCategories)());
   };
 
@@ -45,8 +47,9 @@ function CategoryTypeSideBar() {
     let {
       value
     } = evt.target;
-    setCurrentActiveLanding(value);
-    (0, _utils.setBrowserQueryParams)("successFulLanding", value);
+    let valueToSet = currentActiveLanding === value ? "" : value;
+    setCurrentActiveLanding(valueToSet);
+    (0, _utils.setBrowserQueryParams)("successFulLanding", valueToSet);
     dispatch((0, _categories.getAllCategories)());
   };
 

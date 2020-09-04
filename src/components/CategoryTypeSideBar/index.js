@@ -24,25 +24,30 @@ function CategoryTypeSideBar() {
 
   let handleGroupByCategory = (evt) => {
     let { textContent } = evt.target;
-    setCurrentActiveCategory(textContent);
 
-    setBrowserQueryParams("launchYear", textContent);
+    let valueToSet = currentActiveCategory === textContent ? "" : textContent;
+
+    setCurrentActiveCategory(valueToSet);
+    setBrowserQueryParams("launchYear", valueToSet);
     dispatch(getAllCategories());
   };
 
   let handleSuccessFulLaunch = (evt) => {
     let { value } = evt.target;
-    setCurrentActiveLaunch(value);
 
-    setBrowserQueryParams("successFulLaunch", value);
+    let valueToSet = currentActiveLaunch === value ? "" : value;
+
+    setCurrentActiveLaunch(valueToSet);
+    setBrowserQueryParams("successFulLaunch", valueToSet);
     dispatch(getAllCategories());
   };
 
   let handleSuccessFulLanding = (evt) => {
     let { value } = evt.target;
-    setCurrentActiveLanding(value);
+    let valueToSet = currentActiveLanding === value ? "" : value;
 
-    setBrowserQueryParams("successFulLanding", value);
+    setCurrentActiveLanding(valueToSet);
+    setBrowserQueryParams("successFulLanding", valueToSet);
     dispatch(getAllCategories());
   };
 
