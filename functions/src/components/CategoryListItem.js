@@ -26,7 +26,7 @@ const CategoryListItem = ({
     land_success = ""
   } = cores[0];
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "card mb-5 w-md-48 mr-2"
+    className: "card mb-2 w-md-48 mr-2"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "card-header mt-3 nb-b mx-3"
   }, /*#__PURE__*/_react.default.createElement(_reactLazyLoadImageComponent.LazyLoadImage, {
