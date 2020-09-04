@@ -18,7 +18,16 @@ export const getAllCategories = async ({
     if(successFullLaunch){
         requestURL = `${requestURL}&launch_success=${successFullLaunch}`;
     }
-  let response = await axios.get(requestURL);
+  try {
+    let response = await axios.get(requestURL);
+    return {
+      categories: response.data
+    };
+  } catch(error) {
+    return {
+      error
+    };
+  }
 
-  return response.data;
+  
 };

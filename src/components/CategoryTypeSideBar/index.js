@@ -52,8 +52,9 @@ function CategoryTypeSideBar() {
     setCurrentActiveLanding(getSuccessFulLanding());
   }, []);
   return (
-    <div className="side-bar col-12 col-md-3 col-lg-2 position-sticky side-bar-container">
-      <h4 className="pt-2">Filters</h4>
+    <div className="side-bar position-sticky side-bar-sm side-bar-md side-bar-lg side-bar-container">
+      {/* {TODO} */}
+      <h4 className="px-3">Filters</h4>
       <h5 className="font-weight-light mb-0 text-center">Launch Year</h5>
       <hr className="m-0 mx-3" />
       <div className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">

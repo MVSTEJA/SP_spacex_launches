@@ -56,9 +56,9 @@ function CategoryTypeSideBar() {
     setCurrentActiveLanding((0, _utils.getSuccessFulLanding)());
   }, []);
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "side-bar col-12 col-md-3 col-lg-2 position-sticky side-bar-container"
+    className: "side-bar position-sticky side-bar-sm side-bar-md side-bar-lg side-bar-container"
   }, /*#__PURE__*/_react.default.createElement("h4", {
-    className: "pt-2"
+    className: "px-3"
   }, "Filters"), /*#__PURE__*/_react.default.createElement("h5", {
     className: "font-weight-light mb-0 text-center"
   }, "Launch Year"), /*#__PURE__*/_react.default.createElement("hr", {

@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import Loadable from "react-loadable";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AsyncCategoryTypeSideBar = Loadable({
   loader: () =>
@@ -20,13 +23,25 @@ const AsyncCategoriesList = Loadable({
 });
 
 const App = () => {
+  const {response, message} = useSelector(
+    (state) => state.categoriesList.categoriesError
+  ) || {};
+
+  console.log(response,message)
+
+  // let {response, message} = categoriesError
+  useEffect(() => {
+    if(message){
+      toast.error(message)
+    }
+  }, [message]);
   return (
-    <React.Fragment>
-      <div className="jumbotron pt-2 px-4">
-        <nav>
+    <div className="jumbotron">
+      <div className="pt-2 high-res-desktop mx-auto">
+        <nav className="position-sticky app-nav-bar">
           <h1>SpaceX Launch Programs</h1>
         </nav>
-        <main className="row">
+        <main className="row mx-0">
           <AsyncCategoryTypeSideBar />
           <AsyncCategoriesList />
         </main>
@@ -38,8 +53,9 @@ const App = () => {
             </span>
           </h5>
         </footer>
+        <ToastContainer />
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

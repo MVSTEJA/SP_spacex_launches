@@ -17,12 +17,12 @@ export const CategoriesList = ({ categoriesList = [] }) => {
   };
   return (
     <div
-      className="col-lg-10 col-md-9 col-12 d-flex flex-column pt-5 pt-md-0 px-0"
+      className="list-section list-section-lg list-section-md list-section-sm d-flex flex-column pt-md-0 px-0"
       id="list-section"
     >
       {categoriesList && categoriesList.length > 0 ? (
-        <div className="container mx-md-2 mx-xxl-auto">
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-1">
+        <div className="container mx-md-2">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4">
             {categoriesList.map((category) => (
               <CategoryListItem
                 category={category}

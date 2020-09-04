@@ -26,7 +26,7 @@ const CategoryListItem = ({
     land_success = ""
   } = cores[0];
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "card mb-5 w-xl-24 w-md-48 mr-2"
+    className: "card mb-5 w-md-48 mr-2"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "card-header mt-3 nb-b mx-3"
   }, /*#__PURE__*/_react.default.createElement(_reactLazyLoadImageComponent.LazyLoadImage, {
@@ -39,7 +39,7 @@ const CategoryListItem = ({
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-body p-3"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "card-text font-weight-bold mb-2"
+    className: "card-text font-weight-bold mb-2 text-heading"
   }, category.mission_name, " ", /*#__PURE__*/_react.default.createElement("span", {
     className: "pl-1"
   }, "#", category.flight_number)), category.mission_id.length > 0 && /*#__PURE__*/_react.default.createElement("div", {
@@ -49,6 +49,7 @@ const CategoryListItem = ({
   }, "Mission Ids:"), /*#__PURE__*/_react.default.createElement("ul", {
     className: "mb-2"
   }, category.mission_id.map(id => /*#__PURE__*/_react.default.createElement("li", {
+    className: "text-heading",
     key: id
   }, id)))), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-text mb-2"
@@ -59,7 +60,7 @@ const CategoryListItem = ({
   }, "Launch Year: "), /*#__PURE__*/_react.default.createElement("dd", {
     className: "col-4"
   }, /*#__PURE__*/_react.default.createElement("span", {
-    className: "font-weight-light"
+    className: "font-weight-light text-heading"
   }, category.launch_year)))), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-text mb-2"
   }, /*#__PURE__*/_react.default.createElement("dl", {
@@ -67,20 +68,20 @@ const CategoryListItem = ({
   }, /*#__PURE__*/_react.default.createElement("dt", {
     className: "col-8"
   }, "Successful Launch: "), /*#__PURE__*/_react.default.createElement("dd", {
-    className: "col-4"
+    className: "col-4 d-flex align-items-center"
   }, /*#__PURE__*/_react.default.createElement("span", {
-    className: "font-weight-light"
-  }, launch_success && launch_success.toString())))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "font-weight-light text-heading"
+  }, launch_success ? launch_success.toString() : 'N/A')))), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-text mb-2"
   }, /*#__PURE__*/_react.default.createElement("dl", {
     className: "row mb-0"
   }, /*#__PURE__*/_react.default.createElement("dt", {
     className: "col-8"
   }, "Successful Landing: "), /*#__PURE__*/_react.default.createElement("dd", {
-    className: "col-4"
+    className: "col-4 d-flex align-items-center"
   }, /*#__PURE__*/_react.default.createElement("span", {
-    className: "font-weight-light"
-  }, land_success && land_success.toString()))))));
+    className: "font-weight-light text-heading"
+  }, land_success ? land_success.toString() : 'N/A'))))));
 };
 
 exports.CategoryListItem = CategoryListItem;

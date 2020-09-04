@@ -29,10 +29,14 @@ const AsyncCategoriesList = (0, _reactLoadable.default)({
 });
 
 const App = () => {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "jumbotron pt-2 px-4"
-  }, /*#__PURE__*/_react.default.createElement("nav", null, /*#__PURE__*/_react.default.createElement("h1", null, "SpaceX Launch Programs")), /*#__PURE__*/_react.default.createElement("main", {
-    className: "row"
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "jumbotron"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "pt-2 high-res-desktop mx-auto"
+  }, /*#__PURE__*/_react.default.createElement("nav", {
+    className: "position-sticky app-nav-bar"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "SpaceX Launch Programs")), /*#__PURE__*/_react.default.createElement("main", {
+    className: "row mx-0"
   }, /*#__PURE__*/_react.default.createElement(AsyncCategoryTypeSideBar, null), /*#__PURE__*/_react.default.createElement(AsyncCategoriesList, null)), /*#__PURE__*/_react.default.createElement("footer", {
     className: "d-flex justify-content-center mt-5"
   }, /*#__PURE__*/_react.default.createElement("h5", null, "Developed by", /*#__PURE__*/_react.default.createElement("span", {

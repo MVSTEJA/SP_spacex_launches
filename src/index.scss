@@ -1,3 +1,5 @@
+@import "~bootstrap/scss/bootstrap";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -19,56 +21,9 @@ code {
   color: #000;
 }
 
-.post-card {
-  cursor: pointer;
-}
-
-.post-full-details {
-  .lead {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 0px) {
-  .pl-xs-5,
-  .px-xs-5 {
-    padding-left: 3rem !important;
-  }
-
-  .ml-xs-5 {
-    padding-left: 3rem !important;
-  }
-}
-
-dialog:not([open]) {
-  display: none !important;
-}
-
-dialog {
-  border: none;
-  padding: 0;
-}
-
-@media (min-width: 700px) {
-  .side-bar {
-    height: 100%;
-    top: 50px;
-  }
-}
-
-.list-group-item-action {
-  cursor: pointer;
-}
-
-.app-nav-bar {
-  top: 0;
-  background: white;
-  z-index: 1;
-  height: 70px;
-}
-
-.cursor-pointer {
-  cursor: pointer;
+.side-bar {
+  height: 100%;
+  top: 50px;
 }
 
 .side-bar-item {
@@ -99,32 +54,88 @@ dialog {
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
-  .w-xl-24 {
-    max-width: 24%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .w-xl-24 {
-    max-width: 1440px;
-  }
-
-  .mx-xxl-auto {
-    margin-left: auto!important;
-    margin-right: auto!important;
-  }
-}
-
-
-.w-80 {
-  width: 80%;
-}
-
 .nb-b {
   border-bottom: none;
 }
 
 .placeholder-image {
   min-height: 100px;
+}
+
+.text-heading {
+  color: #3A3D69;
+}
+
+.app-nav-bar {
+  top: 0;
+  z-index: 1;
+  background: #e9ecef;
+}
+
+@media only screen and  (max-width: 700px) {
+  .position-sticky {
+    position: initial !important;
+  }
+  .side-bar-sm {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .list-section-sm {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .row-cols-1 > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .side-bar-md {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .mx-md-2 {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+
+  .list-section-md {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .row-cols-md-2 > * {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .side-bar-lg {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+  .list-section-lg {
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+  .row-cols-lg-4 > * {
+    flex: 0 0 24%;
+    max-width: 24%;
+  }
+}
+
+.jumbotron {
+    padding: 0 0.5rem;
+}
+
+@media (min-width: 1440px) {
+
+  .high-res-desktop {
+    max-width: 1440px;
+  }
 }
