@@ -20,5 +20,4 @@ function shallow(ui, { initialState, reducer, dispatch } = {}) {
   return enzymeShallow(<Provider store={mockStore}>{ui}</Provider>);
 }
 
-// override render method
 export { mount, shallow };

@@ -23,10 +23,8 @@ const AsyncCategoriesList = Loadable({
 });
 
 const App = () => {
-  const { response, message } =
+  const { message } =
     useSelector((state) => state.categoriesList.categoriesError) || {};
-
-  console.log(response, message);
 
   let dispatch = useDispatch();
   useEffect(() => {

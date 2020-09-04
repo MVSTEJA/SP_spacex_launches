@@ -53,8 +53,7 @@ function CategoryTypeSideBar() {
   }, []);
   return (
     <div className="side-bar position-sticky side-bar-sm side-bar-md side-bar-lg side-bar-container">
-      {/* {TODO} */}
-      <h4 className="px-3">Filters</h4>
+      <h4 className="px-3 pt-2">Filters</h4>
       <h5 className="font-weight-light mb-0 text-center">Launch Year</h5>
       <hr className="m-0 mx-3" />
       <div className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
