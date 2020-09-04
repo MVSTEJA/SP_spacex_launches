@@ -1,6 +1,8 @@
-## SSR hosted at: [Sapient](https://sapient-xt-spacex.web.app)
+## SSR hosted at: [sp_spacex](https://sapient-xt-spacex.web.app)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+The Stack used here are :- react, redux, redux-thunk, axios, react-loadable, jest, enzyme, express, firebase.
 
 ### What's this ?
 
@@ -8,9 +10,15 @@ This is a SPA built to see all spaceX launches, able to be filtered by `year, su
 
 ## Lighthouse scores
 
-![mobile score](/lighthouse-images/Screenshot 2020-09-03 at 9.36.27 PM.png)
+Mobile score :
 
-## Available Scripts
+![mobile score](/lighthouse-images/mobile-score.png)
+
+Desktop score :
+
+![desktop score](/lighthouse-images/desktop-score.png)
+
+## How can I see it in action?
 
 In order to install dependencies, build the app and run the express server:
 
