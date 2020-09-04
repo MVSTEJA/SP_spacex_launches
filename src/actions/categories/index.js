@@ -5,6 +5,11 @@ import {
   getSuccessFulLaunch,
 } from "../../utils";
 
+export const errorGetCategories= (error = {}) => ({
+  type: "ERROR_GET_CATEGORIES",
+  error
+});
+
 export const getAllCategories = () => async (dispatch) => {
   let filterBy = {
     launchYear: getLaunchYear(),
@@ -26,10 +31,7 @@ export const getAllCategories = () => async (dispatch) => {
       isLoadMoreVisible: categories.length === 10,
     });
   } else {
-    dispatch({
-      type: "ERROR_GET_CATEGORIES",
-      error,
-    });
+    dispatch(errorGetCategories(error));
   }
 };
 
@@ -60,9 +62,6 @@ export const loadMoreCategories = (offsetBy) => async (dispatch) => {
       isLoadMoreVisible: categories.length === 10,
     });
   } else {
-    dispatch({
-      type: "ERROR_GET_CATEGORIES",
-      error,
-    });
+    dispatch(errorGetCategories(error));
   }
 };

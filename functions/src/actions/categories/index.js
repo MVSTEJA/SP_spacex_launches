@@ -5,11 +5,18 @@ var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWild
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.loadMoreCategories = exports.getAllCategories = void 0;
+exports.loadMoreCategories = exports.getAllCategories = exports.errorGetCategories = void 0;
 
 var categoriesApi = _interopRequireWildcard(require("../../api/categories"));
 
 var _utils = require("../../utils");
+
+const errorGetCategories = (error = {}) => ({
+  type: "ERROR_GET_CATEGORIES",
+  error
+});
+
+exports.errorGetCategories = errorGetCategories;
 
 const getAllCategories = () => async dispatch => {
   let filterBy = {
@@ -33,10 +40,7 @@ const getAllCategories = () => async dispatch => {
       isLoadMoreVisible: categories.length === 10
     });
   } else {
-    dispatch({
-      type: "ERROR_GET_CATEGORIES",
-      error
-    });
+    dispatch(errorGetCategories(error));
   }
 };
 
@@ -69,10 +73,7 @@ const loadMoreCategories = offsetBy => async dispatch => {
       isLoadMoreVisible: categories.length === 10
     });
   } else {
-    dispatch({
-      type: "ERROR_GET_CATEGORIES",
-      error
-    });
+    dispatch(errorGetCategories(error));
   }
 };
 

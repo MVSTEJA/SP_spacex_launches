@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Loadable from "react-loadable";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { errorGetCategories } from "./actions/categories";
 
 const AsyncCategoryTypeSideBar = Loadable({
   loader: () =>
@@ -23,18 +23,19 @@ const AsyncCategoriesList = Loadable({
 });
 
 const App = () => {
-  const {response, message} = useSelector(
-    (state) => state.categoriesList.categoriesError
-  ) || {};
+  const { response, message } =
+    useSelector((state) => state.categoriesList.categoriesError) || {};
 
-  console.log(response,message)
+  console.log(response, message);
 
-  // let {response, message} = categoriesError
+  let dispatch = useDispatch();
   useEffect(() => {
-    if(message){
-      toast.error(message)
+    if (message) {
+      toast.error(message);
+      dispatch(errorGetCategories());
     }
-  }, [message]);
+  }, [message, dispatch]);
+
   return (
     <div className="jumbotron">
       <div className="pt-2 high-res-desktop mx-auto">

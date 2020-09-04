@@ -19,7 +19,7 @@ var _reactLoadable = _interopRequireDefault(require("react-loadable"));
 
 var _reactToastify = require("react-toastify");
 
-require("react-toastify/dist/ReactToastify.css");
+var _categories = require("./actions/categories");
 
 const AsyncCategoryTypeSideBar = (0, _reactLoadable.default)({
   loader: () => Promise.resolve().then(() => (0, _interopRequireWildcard2.default)(require("./components/CategoryTypeSideBar"))),
@@ -41,13 +41,15 @@ const App = () => {
     response,
     message
   } = (0, _reactRedux.useSelector)(state => state.categoriesList.categoriesError) || {};
-  console.log(response, message); // let {response, message} = categoriesError
-
+  console.log(response, message);
+  let dispatch = (0, _reactRedux.useDispatch)();
   (0, _react.useEffect)(() => {
     if (message) {
       _reactToastify.toast.error(message);
+
+      dispatch((0, _categories.errorGetCategories)());
     }
-  }, [message]);
+  }, [message, dispatch]);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "jumbotron"
   }, /*#__PURE__*/_react.default.createElement("div", {
