@@ -2,19 +2,31 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The Stack used here are :- react, redux, redux-thunk, axios, react-loadable, jest, enzyme, express, firebase.
+The Stack used here are :- react, redux, redux-thunk, axios, react-loadable, react-toastify, jest, enzyme, express, firebase.
 
 ### What's this ?
 
-This is a SPA built to see all spaceX launches, able to be filtered by `year, successful launch and succesful landing`.
+1. This is a SPA built to see all spaceX launches, able to be filtered by `year, successful launch and succesful landing`. For basic styling i have used bootstrap css, And went with custom css in some places to align with responsive designs.
+
+2. In order to keep the UI from being janky or have some sort of lag. I have introduced 'load more'
+
+3. Have handle any api erros and showing an error toaster.
+
+4. Have made the filters sidebar position to be fixed in place for better UX.
+
+5. Have made the header sticky as well for better UX.
 
 ## Lighthouse scores
 
 Mobile score :
 
+(Note:- Accesibility is a bit affected both on mobile and desktop, due to wrong order of headings used, I gave importance to design here, that's the cause.)
+
 ![mobile score](/lighthouse-images/mobile-score.png)
 
 Desktop score :
+
+(Note:- The desktop score for performance is a bit low, due to images being of large size. Could not find an alternative solution.)
 
 ![desktop score](/lighthouse-images/desktop-score.png)
 
