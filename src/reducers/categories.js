@@ -41,6 +41,13 @@ const categories = (state = INITIAL_STATE, action) => {
       }
     }
 
+    case 'IS_CATEGORIES_LOADING': {
+      return {
+        ...state,
+        isCategoriesLoading: action.loading
+      }
+    }
+
     default:
       return state;
   }

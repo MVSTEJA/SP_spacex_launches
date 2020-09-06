@@ -1,5 +1,4 @@
 import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export const CategoryListItem = ({ category = {} }) => {
   let {
@@ -13,13 +12,12 @@ export const CategoryListItem = ({ category = {} }) => {
   return (
     <div className="card mb-2 w-md-48 mr-2">
       <div className="card-header mt-3 nb-b mx-3">
-        <LazyLoadImage
-          wrapperClassName="mx-auto h-100 placeholder-image"
-          src={category.links.mission_patch}
-          alt="Card cap"
+        <img
+          data-src={category.links.mission_patch}
+          src={require("../images/image-placeholder.png")}
           width="100%"
-          effect="blur"
-          placeholderSrc={require("../images/image-placeholder.png")}
+          className="lazyload"
+          alt=""
         />
       </div>
 
@@ -33,7 +31,9 @@ export const CategoryListItem = ({ category = {} }) => {
             <span className="mb-0 font-weight-bold">Mission Ids:</span>
             <ul className="mb-2">
               {category.mission_id.map((id) => (
-                <li className="text-heading" key={id}>{id}</li>
+                <li className="text-heading" key={id}>
+                  {id}
+                </li>
               ))}
             </ul>
           </div>
@@ -42,7 +42,9 @@ export const CategoryListItem = ({ category = {} }) => {
           <dl className="row mb-0">
             <dt className="col-8">Launch Year: </dt>
             <dd className="col-4">
-              <span className="font-weight-light text-heading">{category.launch_year}</span>
+              <span className="font-weight-light text-heading">
+                {category.launch_year}
+              </span>
             </dd>
           </dl>
         </div>
@@ -52,7 +54,7 @@ export const CategoryListItem = ({ category = {} }) => {
             <dt className="col-8">Successful Launch: </dt>
             <dd className="col-4 d-flex align-items-center">
               <span className="font-weight-light text-heading">
-                {launch_success ? launch_success.toString(): 'N/A'}
+                {launch_success ? launch_success.toString() : "N/A"}
               </span>
             </dd>
           </dl>
@@ -63,7 +65,7 @@ export const CategoryListItem = ({ category = {} }) => {
             <dt className="col-8">Successful Landing: </dt>
             <dd className="col-4 d-flex align-items-center">
               <span className="font-weight-light text-heading">
-                {land_success ? land_success.toString(): 'N/A'}
+                {land_success ? land_success.toString() : "N/A"}
               </span>
             </dd>
           </dl>

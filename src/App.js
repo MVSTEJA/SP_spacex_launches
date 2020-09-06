@@ -34,6 +34,10 @@ const App = () => {
     }
   }, [message, dispatch]);
 
+  useEffect(() => {
+    document.querySelector('.app-loader-overlay').classList.remove('show');
+    document.querySelector('.app-loader-spanner').classList.remove('show');
+  }, [])
   return (
     <div className="jumbotron">
       <div className="pt-2 high-res-desktop mx-auto">
@@ -45,12 +49,12 @@ const App = () => {
           <AsyncCategoriesList />
         </main>
         <footer className="d-flex justify-content-center mt-5">
-          <h5>
+          <h3 className="h5">
             Developed by
             <span className="font-weight-light align-self-baseline">
               : MVS Teja
             </span>
-          </h5>
+          </h3>
         </footer>
         <ToastContainer />
       </div>

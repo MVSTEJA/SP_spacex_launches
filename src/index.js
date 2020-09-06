@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import Loadable from "react-loadable";
 
+import 'lazysizes';
 import 'react-toastify/dist/ReactToastify.css';
 import "./index.scss";
 

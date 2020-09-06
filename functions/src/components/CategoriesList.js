@@ -27,7 +27,7 @@ const CategoriesList = ({
     dispatch((0, _categories.loadMoreCategories)(_constants.DEFAULT_OFFSET));
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("section", {
     className: "list-section list-section-lg list-section-md list-section-sm d-flex flex-column pt-md-0 px-0",
     id: "list-section"
   }, categoriesList && categoriesList.length > 0 ? /*#__PURE__*/_react.default.createElement("div", {
@@ -37,9 +37,9 @@ const CategoriesList = ({
   }, categoriesList.map(category => /*#__PURE__*/_react.default.createElement(_CategoryListItem.default, {
     category: category,
     key: category.mission_name
-  })))) : /*#__PURE__*/_react.default.createElement("div", {
-    className: "h5 h-100 d-flex justify-content-center align-items-center"
-  }, /*#__PURE__*/_react.default.createElement("p", null, "No items to show.")), isLoadMoreVisible && categoriesList.length > 0 && /*#__PURE__*/_react.default.createElement("button", {
+  })))) : /*#__PURE__*/_react.default.createElement("h5", {
+    className: "h-100 d-flex justify-content-center align-items-center"
+  }, "No launches to show."), isLoadMoreVisible && categoriesList.length > 0 && /*#__PURE__*/_react.default.createElement("button", {
     className: "btn btn-info mx-auto text-dark-100",
     onClick: handleLoadMore
   }, "Load more"));

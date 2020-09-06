@@ -9,8 +9,6 @@ exports.default = exports.CategoryListItem = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _reactLazyLoadImageComponent = require("react-lazy-load-image-component");
-
 const CategoryListItem = ({
   category = {}
 }) => {
@@ -29,13 +27,12 @@ const CategoryListItem = ({
     className: "card mb-2 w-md-48 mr-2"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "card-header mt-3 nb-b mx-3"
-  }, /*#__PURE__*/_react.default.createElement(_reactLazyLoadImageComponent.LazyLoadImage, {
-    wrapperClassName: "mx-auto h-100 placeholder-image",
-    src: category.links.mission_patch,
-    alt: "Card cap",
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    "data-src": category.links.mission_patch,
+    src: require("../images/image-placeholder.png"),
     width: "100%",
-    effect: "blur",
-    placeholderSrc: require("../images/image-placeholder.png")
+    className: "lazyload",
+    alt: ""
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-body p-3"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -71,7 +68,7 @@ const CategoryListItem = ({
     className: "col-4 d-flex align-items-center"
   }, /*#__PURE__*/_react.default.createElement("span", {
     className: "font-weight-light text-heading"
-  }, launch_success ? launch_success.toString() : 'N/A')))), /*#__PURE__*/_react.default.createElement("div", {
+  }, launch_success ? launch_success.toString() : "N/A")))), /*#__PURE__*/_react.default.createElement("div", {
     className: "card-text mb-2"
   }, /*#__PURE__*/_react.default.createElement("dl", {
     className: "row mb-0"
@@ -81,7 +78,7 @@ const CategoryListItem = ({
     className: "col-4 d-flex align-items-center"
   }, /*#__PURE__*/_react.default.createElement("span", {
     className: "font-weight-light text-heading"
-  }, land_success ? land_success.toString() : 'N/A'))))));
+  }, land_success ? land_success.toString() : "N/A"))))));
 };
 
 exports.CategoryListItem = CategoryListItem;

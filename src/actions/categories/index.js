@@ -5,9 +5,14 @@ import {
   getSuccessFulLaunch,
 } from "../../utils";
 
-export const errorGetCategories= (error = {}) => ({
+export const errorGetCategories = (error = {}) => ({
   type: "ERROR_GET_CATEGORIES",
-  error
+  error,
+});
+
+export const isCategoriesLoading = (loading) => ({
+  type: "IS_CATEGORIES_LOADING",
+  loading,
 });
 
 export const getAllCategories = () => async (dispatch) => {
@@ -17,9 +22,12 @@ export const getAllCategories = () => async (dispatch) => {
     successFullLanding: getSuccessFulLanding(),
   };
 
+  dispatch(isCategoriesLoading(true));
+
   let { categories, error } = await categoriesApi.getAllCategories({
     ...filterBy,
   });
+
   if (categories) {
     dispatch({
       type: "All_CATEGORIES",
@@ -33,6 +41,8 @@ export const getAllCategories = () => async (dispatch) => {
   } else {
     dispatch(errorGetCategories(error));
   }
+
+  dispatch(isCategoriesLoading(false));
 };
 
 export const loadMoreCategories = (offsetBy) => async (dispatch) => {
@@ -41,6 +51,7 @@ export const loadMoreCategories = (offsetBy) => async (dispatch) => {
     successFullLaunch: getSuccessFulLaunch(),
     successFullLanding: getSuccessFulLanding(),
   };
+  dispatch(isCategoriesLoading(true));
   let { categories, error } = await categoriesApi.getAllCategories({
     ...filterBy,
     offsetBy,
@@ -64,4 +75,6 @@ export const loadMoreCategories = (offsetBy) => async (dispatch) => {
   } else {
     dispatch(errorGetCategories(error));
   }
+
+  dispatch(isCategoriesLoading(false));
 };

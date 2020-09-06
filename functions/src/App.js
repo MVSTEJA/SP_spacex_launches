@@ -48,6 +48,10 @@ const App = () => {
       dispatch((0, _categories.errorGetCategories)());
     }
   }, [message, dispatch]);
+  (0, _react.useEffect)(() => {
+    document.querySelector('.app-loader-overlay').classList.remove('show');
+    document.querySelector('.app-loader-spanner').classList.remove('show');
+  }, []);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "jumbotron"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -58,7 +62,9 @@ const App = () => {
     className: "row mx-0"
   }, /*#__PURE__*/_react.default.createElement(AsyncCategoryTypeSideBar, null), /*#__PURE__*/_react.default.createElement(AsyncCategoriesList, null)), /*#__PURE__*/_react.default.createElement("footer", {
     className: "d-flex justify-content-center mt-5"
-  }, /*#__PURE__*/_react.default.createElement("h5", null, "Developed by", /*#__PURE__*/_react.default.createElement("span", {
+  }, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "h5"
+  }, "Developed by", /*#__PURE__*/_react.default.createElement("span", {
     className: "font-weight-light align-self-baseline"
   }, ": MVS Teja"))), /*#__PURE__*/_react.default.createElement(_reactToastify.ToastContainer, null)));
 };

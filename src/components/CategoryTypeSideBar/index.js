@@ -52,14 +52,17 @@ function CategoryTypeSideBar() {
   };
 
   useEffect(() => {
+    /**
+     * Setting categories on initial load.
+     */
     setCurrentActiveCategory(getLaunchYear());
     setCurrentActiveLaunch(getSuccessFulLaunch());
     setCurrentActiveLanding(getSuccessFulLanding());
   }, []);
   return (
-    <div className="side-bar position-sticky side-bar-sm side-bar-md side-bar-lg side-bar-container">
-      <h4 className="px-3 pt-2">Filters</h4>
-      <h5 className="font-weight-light mb-0 text-center">Launch Year</h5>
+    <aside className="side-bar position-sticky side-bar-sm side-bar-md side-bar-lg side-bar-container">
+      <h2 className="h4 px-3 pt-2">Filters</h2>
+      <h3 className="h5 font-weight-light mb-0 text-center">Launch Year</h3>
       <hr className="m-0 mx-3" />
       <div className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
         {yearCategories &&
@@ -76,7 +79,7 @@ function CategoryTypeSideBar() {
             </button>
           ))}
       </div>
-      <h5 className="font-weight-light mb-0 text-center">Succesful Launch</h5>
+      <h3 className="h5 font-weight-light mb-0 text-center">Succesful Launch</h3>
       <hr className="m-0 mx-3" />
       <div className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
         {successFulLaunchList &&
@@ -95,7 +98,7 @@ function CategoryTypeSideBar() {
           ))}
       </div>
 
-      <h5 className="font-weight-light mb-0 text-center">Succesful Landing</h5>
+      <h3 className="h5 font-weight-light mb-0 text-center">Succesful Landing</h3>
       <hr className="m-0 mx-3" />
       <div className="list-group flex-md-row flex-md-wrap justify-content-center justify-content-md-between pb-3">
         {successFulLandingList &&
@@ -113,7 +116,7 @@ function CategoryTypeSideBar() {
             </button>
           ))}
       </div>
-    </div>
+    </aside>
   );
 }
 

@@ -54,16 +54,19 @@ function CategoryTypeSideBar() {
   };
 
   (0, _react.useEffect)(() => {
+    /**
+     * Setting categories on initial load.
+     */
     setCurrentActiveCategory((0, _utils.getLaunchYear)());
     setCurrentActiveLaunch((0, _utils.getSuccessFulLaunch)());
     setCurrentActiveLanding((0, _utils.getSuccessFulLanding)());
   }, []);
-  return /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("aside", {
     className: "side-bar position-sticky side-bar-sm side-bar-md side-bar-lg side-bar-container"
-  }, /*#__PURE__*/_react.default.createElement("h4", {
-    className: "px-3 pt-2"
-  }, "Filters"), /*#__PURE__*/_react.default.createElement("h5", {
-    className: "font-weight-light mb-0 text-center"
+  }, /*#__PURE__*/_react.default.createElement("h2", {
+    className: "h4 px-3 pt-2"
+  }, "Filters"), /*#__PURE__*/_react.default.createElement("h3", {
+    className: "h5 font-weight-light mb-0 text-center"
   }, "Launch Year"), /*#__PURE__*/_react.default.createElement("hr", {
     className: "m-0 mx-3"
   }), /*#__PURE__*/_react.default.createElement("div", {
@@ -73,8 +76,8 @@ function CategoryTypeSideBar() {
     className: `btn btn-sm mx-auto mx-md-3 mt-3 w-33 side-bar-item ${currentActiveCategory === cat.name && "active"}`,
     onClick: handleGroupByCategory,
     href: "#list-section"
-  }, cat.name))), /*#__PURE__*/_react.default.createElement("h5", {
-    className: "font-weight-light mb-0 text-center"
+  }, cat.name))), /*#__PURE__*/_react.default.createElement("h3", {
+    className: "h5 font-weight-light mb-0 text-center"
   }, "Succesful Launch"), /*#__PURE__*/_react.default.createElement("hr", {
     className: "m-0 mx-3"
   }), /*#__PURE__*/_react.default.createElement("div", {
@@ -85,8 +88,8 @@ function CategoryTypeSideBar() {
     onClick: handleSuccessFulLaunch,
     value: launch.value,
     href: "#list-section"
-  }, launch.name))), /*#__PURE__*/_react.default.createElement("h5", {
-    className: "font-weight-light mb-0 text-center"
+  }, launch.name))), /*#__PURE__*/_react.default.createElement("h3", {
+    className: "h5 font-weight-light mb-0 text-center"
   }, "Succesful Landing"), /*#__PURE__*/_react.default.createElement("hr", {
     className: "m-0 mx-3"
   }), /*#__PURE__*/_react.default.createElement("div", {

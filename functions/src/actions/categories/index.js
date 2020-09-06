@@ -5,7 +5,7 @@ var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWild
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.loadMoreCategories = exports.getAllCategories = exports.errorGetCategories = void 0;
+exports.loadMoreCategories = exports.getAllCategories = exports.isCategoriesLoading = exports.errorGetCategories = void 0;
 
 var categoriesApi = _interopRequireWildcard(require("../../api/categories"));
 
@@ -18,12 +18,20 @@ const errorGetCategories = (error = {}) => ({
 
 exports.errorGetCategories = errorGetCategories;
 
+const isCategoriesLoading = loading => ({
+  type: "IS_CATEGORIES_LOADING",
+  loading
+});
+
+exports.isCategoriesLoading = isCategoriesLoading;
+
 const getAllCategories = () => async dispatch => {
   let filterBy = {
     launchYear: (0, _utils.getLaunchYear)(),
     successFullLaunch: (0, _utils.getSuccessFulLaunch)(),
     successFullLanding: (0, _utils.getSuccessFulLanding)()
   };
+  dispatch(isCategoriesLoading(true));
   let {
     categories,
     error
@@ -42,6 +50,8 @@ const getAllCategories = () => async dispatch => {
   } else {
     dispatch(errorGetCategories(error));
   }
+
+  dispatch(isCategoriesLoading(false));
 };
 
 exports.getAllCategories = getAllCategories;
@@ -52,6 +62,7 @@ const loadMoreCategories = offsetBy => async dispatch => {
     successFullLaunch: (0, _utils.getSuccessFulLaunch)(),
     successFullLanding: (0, _utils.getSuccessFulLanding)()
   };
+  dispatch(isCategoriesLoading(true));
   let {
     categories,
     error
@@ -75,6 +86,8 @@ const loadMoreCategories = offsetBy => async dispatch => {
   } else {
     dispatch(errorGetCategories(error));
   }
+
+  dispatch(isCategoriesLoading(false));
 };
 
 exports.loadMoreCategories = loadMoreCategories;

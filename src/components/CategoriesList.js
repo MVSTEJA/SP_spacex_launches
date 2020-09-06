@@ -16,7 +16,7 @@ export const CategoriesList = ({ categoriesList = [] }) => {
     dispatch(loadMoreCategories(DEFAULT_OFFSET));
   };
   return (
-    <div
+    <section
       className="list-section list-section-lg list-section-md list-section-sm d-flex flex-column pt-md-0 px-0"
       id="list-section"
     >
@@ -32,9 +32,9 @@ export const CategoriesList = ({ categoriesList = [] }) => {
           </div>
         </div>
       ) : (
-        <div className="h5 h-100 d-flex justify-content-center align-items-center">
-          <p>No items to show.</p>
-        </div>
+        <h5 className="h-100 d-flex justify-content-center align-items-center">
+          No launches to show.
+        </h5>
       )}
 
       {isLoadMoreVisible && categoriesList.length > 0 && (
@@ -45,7 +45,7 @@ export const CategoriesList = ({ categoriesList = [] }) => {
           Load more
         </button>
       )}
-    </div>
+    </section>
   );
 };
 

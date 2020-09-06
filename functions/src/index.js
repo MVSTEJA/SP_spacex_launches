@@ -12,6 +12,8 @@ var _reactRedux = require("react-redux");
 
 var _reactLoadable = _interopRequireDefault(require("react-loadable"));
 
+require("lazysizes");
+
 require("react-toastify/dist/ReactToastify.css");
 
 require("./index.scss");

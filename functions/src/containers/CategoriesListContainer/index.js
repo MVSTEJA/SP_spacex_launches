@@ -18,14 +18,24 @@ var _CategoriesList = _interopRequireDefault(require("../../components/Categorie
 var _categories = require("../../actions/categories");
 
 const CategoriesListContainer = () => {
-  const categoriesList = (0, _reactRedux.useSelector)(state => state.categoriesList.categories);
+  const {
+    categories: categoriesList,
+    isCategoriesLoading
+  } = (0, _reactRedux.useSelector)(state => state.categoriesList);
   const dispatch = (0, _reactRedux.useDispatch)();
   (0, _react.useEffect)(() => {
     dispatch((0, _categories.getAllCategories)());
   }, [dispatch]);
-  return /*#__PURE__*/_react.default.createElement(_CategoriesList.default, {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, isCategoriesLoading ? /*#__PURE__*/_react.default.createElement("div", {
+    className: "d-flex align-items-center list-section list-section-lg list-section-md list-section-sm justify-content-center"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "spinner-border",
+    role: "status"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "sr-only"
+  }, "Loading..."))) : /*#__PURE__*/_react.default.createElement(_CategoriesList.default, {
     categoriesList: categoriesList
-  });
+  }));
 };
 
 var _default = CategoriesListContainer;
