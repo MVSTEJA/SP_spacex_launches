@@ -20,13 +20,9 @@ The Stack used here are :- react, redux, redux-thunk, axios, react-loadable, rea
 
 Mobile score :
 
-(Note:- Accesibility is a bit affected both on mobile and desktop, due to wrong order of headings used, I gave importance to design here, that's the cause.)
-
 ![mobile score](/lighthouse-images/mobile-score.png)
 
 Desktop score :
-
-(Note:- The desktop score for performance is a bit low, due to images being of large size. Could not find an alternative solution.)
 
 ![desktop score](/lighthouse-images/desktop-score.png)
 
