@@ -1,6 +1,6 @@
-## SSR hosted at: [sp_spacex](https://sapient-xt-spacex.web.app)
+## Server Sider Rendered website hosted at: [sp_spacex](https://sapient-xt-spacex.web.app)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and custom SSR code.
 
 The Stack used here are :- react, redux, redux-thunk, axios, react-loadable, react-toastify, jest, enzyme, express, firebase.
 
