@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "ally-perf-improv",
     "public": "build",
     "ignore": [
       "firebase.json",

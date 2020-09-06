@@ -2,5 +2,14 @@
   "projects": {
     "default": "sapient-xt-spacex",
     "ssr": "sapient-xt-spacex"
+  },
+  "targets": {
+    "sapient-xt-spacex": {
+      "hosting": {
+        "ally-perf-improv": [
+          "ally-perf-improv.web.app"
+        ]
+      }
+    }
   }
 }
